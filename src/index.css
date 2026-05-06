@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=JetBrains+Mono:wght@400;500;700&family=Anton&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-terminal-green: var(--palette-primary, #00ff41);
+  --color-terminal-bg: var(--palette-bg, #0d0208);
+
+  --animate-spin-slow: spin 8s linear infinite;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-terminal-bg);
+    color: var(--color-terminal-green);
+    @apply font-sans selection:bg-terminal-green selection:text-black antialiased overflow-hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/10;
+  border-radius: 0px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.ascii-container {
+  line-height: 0.65;
+  letter-spacing: 0;
+  white-space: pre;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}

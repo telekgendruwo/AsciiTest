@@ -1,0 +1,6 @@
+{
+  "name": "ASCII Vision Editor v2.0",
+  "description": "Convert images into retro-styled ASCII art with a cosmic terminal aesthetic.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}
